@@ -1,4 +1,57 @@
-# machine-learning-practice
-Notebooks for machine learning practice
+# Machine Learning Practice
 
-Add data inside the `data` folder for training. Data is too large to commit to the repository, can be pulled from a link in the python scripts.
+This repo contains [Jupyter](http://jupyter.org) notebooks for machine learning practice. Our overall goal is to learn how to use [`xgboost`](https://xgboost.readthedocs.io/en/latest/) to classify high vs low ratings and predict the actual ratings using the text plus any additional features (e.g., [fleishman-kincaid index](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests), number of words) that we might want to add to the features.
+
+## Getting Started
+
+### 1. Clone the Repo
+
+```sh
+$ git clone https://github.com/coetic/machine-learning-practice
+```
+
+### 2. Install Anaconda/Jupyter
+
+Follow [this link](http://jupyter.org/install) for instructions on installing Anaconda/Jupyter.
+
+### 3. Run the Notebook
+
+Run the following command to start a Jupyter notebook server locally (do this in the directory of the repository):
+
+```sh
+$ jupyter notebook
+```
+
+## Data
+
+The practice data we're using is the [Amazon fine food reviews]() dataset which is located in the CoeticHR public S3 bucket at https://s3.amazonaws.com/coetichr/AmazonFoodReviews.
+
+This folder contains the following files:
+
+- `Reviews.csv`
+- `database.sqlite`
+- `hashes.txt`
+
+Since the data is too large to be committed to the repository, download it from the S3 bucket and place it in the `data` folder in your local repository version which is ignored by Git. *A better alternative may be to use the S3 path to the files to request them over the network when loaded into the scripts rather than requiring them locally.*
+
+## nltk
+
+We're going to use the [`nltk`](https://www.nltk.org/) (Natural Language Toolkit) library to form a tokenized corpus of words. These are some standard settings that work well for `nltk`:
+
+```py
+tfv = TfidfVectorizer(min_df=3, max_features=None, strip_accents='unicode', analyzer='word', token_pattern=r'\w{1,}', ngram_range=(1,3), use_idf=1, smooth_idf=1, sublinear_tf=1, stop_words='english')
+```
+
+## Resources
+
+- [Natural Language Processing Flowchart](https://developers.google.com/machine-learning/guides/text-classification/step-2-5)
+- [Scikit-Learn for Text Analysis of Amazon Fine Food Reviews](https://datascienceplus.com/scikit-learn-for-text-analysis-of-amazon-fine-food-reviews/)
+- [Exploratory visualization of Amazon fine food reviews](https://nycdatascience.com/blog/student-works/amazon-fine-foods-visualization/)
+- [A Comprehensive Guide to Understand and Implement Text Classification in Python](https://www.analyticsvidhya.com/blog/2018/04/a-comprehensive-guide-to-understand-and-implement-text-classification-in-python/)
+- [Metrics To Evaluate Machine Learning Algorithms in Python](https://machinelearningmastery.com/metrics-evaluate-machine-learning-algorithms-python/)
+- [Story and Lessons Behind the Evolution of xgboost](https://homes.cs.washington.edu/~tqchen/2016/03/10/story-and-lessons-behind-the-evolution-of-xgboost.html)
+- [Using xgboost in Python](https://www.datacamp.com/community/tutorials/xgboost-in-python)
+- [xgboost oh GitHub](https://github.com/dmlc/xgboost)
+- [Gradient Boosting](https://en.wikipedia.org/wiki/Gradient_boosting)
+- [A Review of the Neural History of Natural Language Processing](http://blog.aylien.com/a-review-of-the-recent-history-of-natural-language-processing/#2018pretrainedlanguagemodels)
+- [Flesh-Kincaid readability tests](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests)
