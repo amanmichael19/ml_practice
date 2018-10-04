@@ -34,6 +34,11 @@ This folder contains the following files:
 - `database.sqlite`
 - `hashes.txt`
 
+The `Reviews.csv` file is in the following format
+
+| ProductId | UserId | ProfileName | HelpfulnessNumerator | HelpfulnessDenominator | Score | Time | Summary | Text |
+|:---|:---|:---|:---|:---|:---|:---|:---|:---|
+
 Since the data is too large to be committed to the repository, download it from the S3 bucket and place it in the `data` folder in your local repository version which is ignored by Git. *A better alternative may be to use the S3 path to the files to request them over the network when loaded into the scripts rather than requiring them locally.*
 
 ## nltk
