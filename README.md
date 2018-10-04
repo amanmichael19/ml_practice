@@ -39,7 +39,13 @@ The `Reviews.csv` file is in the following format
 | ProductId | UserId | ProfileName | HelpfulnessNumerator | HelpfulnessDenominator | Score | Time | Summary | Text |
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
 
-Since the data is too large to be committed to the repository, download it from the S3 bucket and place it in the `data` folder in your local repository version which is ignored by Git. *A better alternative may be to use the S3 path to the files to request them over the network when loaded into the scripts rather than requiring them locally.*
+Since the data is too large to be committed to the repository, download it from the S3 bucket and place it in the `data` folder in your local repository version which is ignored by Git. The files can also be requested directly from S3 but will take slightly longer.
+
+In the `scripts/amazon_food_reviews.ipynb` script, make the following change to use the remote version instead:
+
+```py
+DATA_LOCAL = False
+```
 
 ## nltk
 
