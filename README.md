@@ -14,6 +14,8 @@ $ git clone https://github.com/coetic/machine-learning-practice
 
 Follow [this link](http://jupyter.org/install) for instructions on installing Anaconda/Jupyter.
 
+*Check out [this article](https://medium.com/codingthesmartway-com-blog/getting-started-with-jupyter-notebook-for-python-4e7082bd5d46) for getting started with Jupyter notebooks for Python.*
+
 ### 3. Run the Notebook
 
 Run the following command to start a Jupyter notebook server locally (do this in the directory of the repository):
