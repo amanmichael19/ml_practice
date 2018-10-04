@@ -56,4 +56,5 @@ tfv = TfidfVectorizer(min_df=3, max_features=None, strip_accents='unicode', anal
 - [xgboost oh GitHub](https://github.com/dmlc/xgboost)
 - [Gradient Boosting](https://en.wikipedia.org/wiki/Gradient_boosting)
 - [A Review of the Neural History of Natural Language Processing](http://blog.aylien.com/a-review-of-the-recent-history-of-natural-language-processing/#2018pretrainedlanguagemodels)
+- [Pandas](https://pandas.pydata.org/)
 - [Flesh-Kincaid readability tests](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests)
