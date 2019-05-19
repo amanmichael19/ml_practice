@@ -1,59 +1,7 @@
 # Machine Learning Practice
 
-This repo contains [Jupyter](http://jupyter.org) notebooks for machine learning practice. Our overall goal is to learn how to use [`xgboost`](https://xgboost.readthedocs.io/en/latest/) to classify high vs low ratings and predict the actual ratings using the text plus any additional features (e.g., [fleishman-kincaid index](https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests), number of words) that we might want to add to the features.
+This repo contains [Jupyter](http://jupyter.org) notebooks for machine learning practice. The overall goal is to learn how to use [`xgboost`](https://xgboost.readthedocs.io/en/latest/) to classify high vs low ratings.
 
-## Getting Started
-
-### 1. Clone the Repo
-
-```sh
-$ git clone https://github.com/coetic/machine-learning-practice
-```
-
-### 2. Install Anaconda/Jupyter
-
-Follow [this link](http://jupyter.org/install) for instructions on installing Anaconda/Jupyter.
-
-*Check out [this article](https://medium.com/codingthesmartway-com-blog/getting-started-with-jupyter-notebook-for-python-4e7082bd5d46) for getting started with Jupyter notebooks for Python.*
-
-### 3. Run the Notebook
-
-Run the following command to start a Jupyter notebook server locally (do this in the directory of the repository):
-
-```sh
-$ jupyter notebook
-```
-
-## Data
-
-The practice data we're using is the [Amazon fine food reviews]() dataset which is located in the CoeticHR public S3 bucket at https://s3.amazonaws.com/coetichr/AmazonFoodReviews.
-
-This folder contains the following files:
-
-- `Reviews.csv`
-- `database.sqlite`
-- `hashes.txt`
-
-The `Reviews.csv` file is in the following format
-
-| ProductId | UserId | ProfileName | HelpfulnessNumerator | HelpfulnessDenominator | Score | Time | Summary | Text |
-|:---|:---|:---|:---|:---|:---|:---|:---|:---|
-
-Since the data is too large to be committed to the repository, download it from the S3 bucket and place it in the `data` folder in your local repository version which is ignored by Git. The files can also be requested directly from S3 but will take slightly longer.
-
-In the `scripts/amazon_food_reviews.ipynb` script, make the following change to use the remote version instead:
-
-```py
-DATA_LOCAL = False
-```
-
-## nltk
-
-We're going to use the [`nltk`](https://www.nltk.org/) (Natural Language Toolkit) library to form a tokenized corpus of words. These are some standard settings that work well for `nltk`:
-
-```py
-tfv = TfidfVectorizer(min_df=3, max_features=None, strip_accents='unicode', analyzer='word', token_pattern=r'\w{1,}', ngram_range=(1,3), use_idf=1, smooth_idf=1, sublinear_tf=1, stop_words='english')
-```
 
 ## Resources
 
